@@ -19,7 +19,7 @@ jobs:
       GO_VERSION: 1.26.1
       HUGO_VERSION: 0.157.0
       NODE_VERSION: 22.22.0
-      TZ: Europe/Oslo
+      BASE_URL: https://lively-meadow-036651c10.7.azurestaticapps.net
     steps:
       - uses: actions/checkout@v3
         with:
@@ -81,6 +81,7 @@ jobs:
           hugo build \
             --gc \
             --minify \
+            --baseURL "$BASE_URL"
             --cacheDir "${{ runner.temp }}/hugo_cache"
 
       - name: Build And Deploy
