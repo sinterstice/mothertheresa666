@@ -81,7 +81,7 @@ jobs:
           hugo build \
             --gc \
             --minify \
-            --baseURL "$BASE_URL"
+            --baseURL "$BASE_URL" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
 
       - name: Build And Deploy
