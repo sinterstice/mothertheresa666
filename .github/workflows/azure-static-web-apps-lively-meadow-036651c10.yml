@@ -58,7 +58,7 @@ jobs:
 
       - name: Verify installations
         run: |
-          ls "${RUNNER_TEMP/gh_bin"
+          ls "${RUNNER_TEMP}/gh_bin"
           echo "Dart Sass: $(sass --version)"
           echo "Go: $(go version)"
           echo "Hugo: $(hugo version)"
