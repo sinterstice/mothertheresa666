@@ -47,12 +47,14 @@ jobs:
         run: |
           curl -sLJO "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
           tar -C "${RUNNER_TEMP}/gh_bin" -xf "dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
+          ls "${RUNNER_TEMP}/gh_bin"
           rm "dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
 
       - name: Install Hugo
         run: |
           curl -sLJO "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
           tar -C "${RUNNER_TEMP}/gh_bin" -xf "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+          ls "${RUNNER_TEMP}/gh_bin"
           rm "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
 
       - name: Verify installations
@@ -64,6 +66,22 @@ jobs:
 
       - name: npm install
         run: npm ci
+
+      - name: Cache restore
+        id: cache-restore
+        uses: actions/cache/restore@v5
+        with:
+          path: ${{ runner.temp }}/hugo_cache
+          key: hugo-${{ github.run_id }}
+          restore-keys:
+            hugo-
+
+      - name: Build the site
+        run: |
+          hugo build \
+            --gc \
+            --minify \
+            --cacheDir "${{ runner.temp }}/hugo_cache"
 
       - name: Build And Deploy
         id: builddeploy
