@@ -47,7 +47,7 @@ jobs:
         run: |
           curl -sLJO "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
           tar -C "${RUNNER_TEMP}/gh_bin" -xf "dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
-          mv "${RUNNER_TEMP}/gh_bin/dart-sass" "${RUNNER_TEMP}/gh_bin/sass"
+          echo "${RUNNER_TEMP/gh_bin/dart-sass" >> "${GITHUB_PATH}"
           rm "dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
 
       - name: Install Hugo
@@ -59,7 +59,7 @@ jobs:
       - name: Verify installations
         run: |
           ls "${RUNNER_TEMP}/gh_bin"
-          echo "Dart Sass: $(${RUNNER_TEMP}/gh_bin/sass --version)"
+          echo "Dart Sass: $(sass --version)"
           echo "Go: $(go version)"
           echo "Hugo: $(hugo version)"
           echo "Node.js: $(node --version)"
