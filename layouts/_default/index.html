@@ -1,0 +1,29 @@
+{{ partial "header.html" . }}
+
+<div class="homepage-hero">
+    <div class="hero-content">
+        <h1><span class="title">{{ .Title | markdownify }}</span></h1>
+        <div class="hero-carousel glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="hero-carousel-slides glide__slides">
+                    {{ range resources.Match "carousel/*.PNG" }}
+                    <div class="hero-carousel-slide glide__slide">
+                      <img src="{{ .RelPermalink }}" alt="">
+                    </div>
+                    {{ end }}
+                </ul>
+                <div class="hero-carousel-controls" data-glide-el="controls">
+                  <button class="hero-carousel-control hero-carousel-control--back" data-glide-dir="<">Back</button>
+                  <button class="hero-carousel-control hero-carousel-control--forward" data-glide-dir=">">Forward</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bio">
+            {{ .Site.Params.bio | markdownify }}
+        </div>
+    </div>
+</div>
+
+{{ partial "menu.html" . }}
+
+{{ partial "footer.html" . }}

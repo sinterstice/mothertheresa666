@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ if .IsHome }}
+        <title>{{ .Site.Title }}</title>
+    {{ else }}
+        <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ end }}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400..840;1,400..840&family=New+Rocker&family=Pirata+One&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    {{ $theme_css := resources.Match "css/*.css" }}
+    {{ $glide_core_css := resources.Get "vendor/@glidejs/glide/dist/css/glide.core.css" }}
+    {{ $glide_theme_css := resources.Get "vendor/@glidejs/glide/dist/css/glide.theme.css" }}
+    {{ $sass := resources.Get "sass/main.scss" | toCSS (dict
+        "enableSourceMap" hugo.IsDevelopment
+        "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+        "transpiler" (cond hugo.IsDevelopment "dartsass" "libsass")
+    ) }}
+    {{ $css := $theme_css 
+        | append (slice $glide_core_css)
+        | append $sass
+        | resources.Concat "style.css" 
+| resources.Minify }}
+    <link rel="stylesheet" href="{{ $css.Permalink }}">
+    {{ partial "head_custom.html" . }}
+  </head>
+  <body>
+<div class="content {{ if .IsHome }}content--home{{ end }}">

@@ -1,0 +1,224 @@
+.homepage-hero {
+  width: 100vw;
+  grid-area: main;
+  position: relative;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0) 40%, rgb(0, 0, 0)) no-repeat top left, url("/hero.jpg") no-repeat top center;
+  background-size: cover;
+  color: #F2F0F2;
+}
+.homepage-hero h1 {
+  margin: 0 auto 1.5rem;
+  font-family: "Pirata One", system-ui;
+  font-family: "New Rocker", system-ui;
+  font-family: "UnifrakturMaguntia", cursive;
+  font-size: 3.2em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: normal;
+  color: #F2F0F2;
+}
+
+.hero-content {
+  max-width: 100%;
+  padding: 15rem 5rem 5rem;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 768px) {
+  .hero-content {
+    padding: 10rem 1rem 1rem;
+  }
+}
+
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 80%) no-repeat, radial-gradient(ellipse, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 80%) no-repeat;
+  background-position: 50% 300%, 50% -100%;
+  background-size: 100% 75%, 100% 75%;
+}
+
+.hero-carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-indent: -9999px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #F2F0F2;
+  background: #A67280 url("/gfx/arrows.svg") no-repeat center left;
+  background-size: auto 24px;
+  overflow: hidden;
+  width: 64px;
+  height: 32px;
+  cursor: pointer;
+  transition: left 0.2s ease, right 0.2s ease;
+}
+.hero-carousel-control.hero-carousel-control--back {
+  left: -42px;
+}
+.hero-carousel-control.hero-carousel-control--back:hover {
+  left: -48px;
+}
+.hero-carousel-control.hero-carousel-control--forward {
+  right: -42px;
+  background-position: center right;
+}
+.hero-carousel-control.hero-carousel-control--forward:hover {
+  right: -48px;
+}
+
+.hero-bio {
+  background: rgba(0, 0, 0, 0.6);
+  margin-top: 1.1rem;
+  padding: 1.1rem;
+  font-size: 1.2rem;
+  max-width: 48rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: #591E2E url("/gfx/texture.png") repeat-y;
+  background-size: contain;
+  font-family: "Andada Pro", serif;
+  font-size: 16px;
+  color: #191826;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+.content {
+  min-height: 100%;
+  display: grid;
+  grid-template-areas: "header" "nav" "main" "footer";
+  box-sizing: border-box;
+}
+.content.content--home {
+  grid-template-areas: "main" "nav" "footer";
+}
+
+.menu {
+  grid-area: nav;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.menu li {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  margin-right: 0.75rem;
+  border: 4px solid #fff;
+  border-radius: 1px;
+  margin-right: 36px;
+}
+.menu li:after, .menu li:first-child:before {
+  position: absolute;
+  display: block;
+  content: "";
+  height: calc(100% + 4px);
+  width: 40px;
+  left: 100%;
+  top: -4px;
+  background: url("/gfx/nav.png") no-repeat left top;
+  background-size: cover;
+  border: 2px solid #fff;
+}
+.menu li:first-child:before {
+  left: auto;
+  right: 100%;
+}
+.menu li a {
+  display: block;
+  font-size: 1.3rem;
+  color: #F2F0F2;
+  background: transparent;
+  margin: 2px;
+  border: 2px solid #fff;
+  border-radius: 0;
+  padding: 0.5rem 0.75rem;
+}
+.menu li a:visited {
+  color: #F2F0F2;
+}
+
+main {
+  grid-area: main;
+  margin: 0 5rem 3rem;
+  padding: 0.75rem;
+  background: rgba(242, 240, 242, 0.6);
+}
+
+footer {
+  grid-area: footer;
+  margin-right: -0.3rem;
+  margin-left: -0.3rem;
+  background: #f2C4D0;
+  color: #191826;
+  padding: 1.1rem 5rem;
+  flex-grow: 1;
+  min-height: 8rem;
+}
+@media only screen and (max-width: 767px) {
+  footer {
+    padding: 1.1rem;
+  }
+}
+
+.footer-columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-column {
+  flex-basis: 12rem;
+  text-align: left;
+  max-width: 32rem;
+  margin-bottom: 1.1rem;
+}
+.footer-column:last-child {
+  flex-grow: 1;
+}
+
+.content--home .footer-columns {
+  flex-direction: column;
+  align-content: center;
+}
+.content--home .footer-column {
+  flex-basis: 100%;
+  text-align: center;
+}
+.content--home .socials {
+  justify-content: center;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+}
+@media only screen and (max-width: 494px) {
+  .socials {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.socials a {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+}
+
+/*# sourceMappingURL=main.css.map */

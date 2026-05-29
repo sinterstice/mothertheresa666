@@ -1,0 +1,41 @@
+baseURL = 'https://mothertheresa666.art/'
+languageCode = 'en-us'
+title = 'mothertheresa666'
+theme = 'hugo-xmin'
+
+[params]
+    bio = """
+Mothertheresa666 is a multimedia project that blends storytelling, absurdity, collage, digital media, and personal narrative.
+
+Based in Rochester, NY, Theresa is a collage artist and social media specialist. She uses her work, both analog and digital, to explore her relationship with religion, spirituality, queerness, and community."""
+
+[menus]
+    [[menus.main]]
+        name = 'Home'
+        pageRef = '/'
+        weight = 10
+    [[menus.main]]
+        name = 'Store'
+        url = 'https://store.mothertheresa666.art'
+    [[menus.main]]
+        name = 'Periodical'
+        pageref = 'periodical'
+
+[markup.goldmark]
+    [markup.goldmark.parser.attribute]
+        block = true
+        title = true
+    [markup.goldmark.renderer]
+        unsafe = true
+
+[module]
+  [[module.mounts]]
+    source = 'node_modules'
+    target = 'assets/vendor'
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+
+[security]
+  [security.exec]
+    allow = ['^(dart-)?sass(-embedded)?$', '^go$', '^npx$', '^postcss$', '^babel$']

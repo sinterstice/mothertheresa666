@@ -1,0 +1,88 @@
+@use 'var.scss' as *;
+
+.homepage-hero { 
+    width: 100vw;
+    grid-area: main;
+    position: relative;
+    background: radial-gradient(ellipse, rgba(0,0,0,0) 40%, rgba(0,0,0,1)) no-repeat top left, url('/hero.jpg') no-repeat top center;
+    background-size: cover;
+    color: $c-bone;
+
+    h1 {
+        margin: 0 auto 1.5rem;
+        font-family: "Pirata One", system-ui;
+        font-family: "New Rocker", system-ui;
+        font-family: "UnifrakturMaguntia", cursive;
+        font-size: 3.2em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        font-weight: normal;
+        color: $c-bone;
+    }
+}
+
+.hero-content {
+    max-width: 100%;
+    padding: 15rem 5rem 5rem;
+    margin: 0 auto;
+
+    @media only screen and (max-width: 768px) {
+        padding: 10rem 1rem 1rem;
+
+    }
+}
+
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: 
+        radial-gradient(ellipse, rgba(0,0,0,.6), rgba(0,0,0,0) 80%) no-repeat,
+        radial-gradient(ellipse, rgba(0,0,0,.6), rgba(0,0,0,0) 80%) no-repeat;
+    background-position: 50% 300%, 50% -100%;
+    background-size: 100% 75%, 100% 75%;
+}
+
+.hero-carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-indent: -9999px;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid $c-bone;
+    background: $c-eyeshadow url('/gfx/arrows.svg') no-repeat center left;
+    background-size: auto 24px;
+    overflow: hidden;
+    width: 64px;
+    height: 32px;
+    cursor: pointer;
+    transition: left 0.2s ease, right 0.2s ease;
+
+    &.hero-carousel-control--back {
+        left: -42px;
+
+        &:hover {
+            left: -48px;
+        }
+    }
+    
+    &.hero-carousel-control--forward {
+        right: -42px;
+        background-position: center right;
+
+        &:hover {
+            right: -48px;
+        }
+    }
+}
+
+.hero-carousel-slide {
+}
+
+.hero-bio {
+    background: rgba(0,0,0, 0.6);
+    margin-top: $d-xlg;
+    padding: $d-xlg;
+    font-size: 1.2rem;
+    max-width: 48rem;
+}

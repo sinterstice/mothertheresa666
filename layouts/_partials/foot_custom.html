@@ -1,0 +1,18 @@
+<div class="footer-columns">
+    <div class="footer-column">
+        <div class="socials">
+            {{ with resources.Get "images/instagram.svg" }}
+                <a href="https://instagram.com/mothertheresa666"><img src="{{ .RelPermalink }}" alt="Instagram"/></a>
+            {{ end }}
+            {{ with resources.Get "images/tumblr.svg" }}
+                <a href="https://tumblr.com/mothertheresa666"><img src="{{ .RelPermalink }}" alt="Tumblr"/></a>
+            {{ end }}
+        </div>
+    </div>
+    <div class="footer-column">
+        {{ if not .IsHome }}
+            {{ .Site.Params.bio | markdownify }}
+        {{ end }}
+        <p>&copy; {{ now.Year }} Theresa Ferrell</p>
+    </div>
+</div>

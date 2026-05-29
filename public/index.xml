@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>I am mother, come rest with me. on mothertheresa666</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in I am mother, come rest with me. on mothertheresa666</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Jan 2000 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/carousel/carousel_00/</link>
+      <pubDate>Sat, 01 Jan 2000 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/carousel/carousel_00/</guid>
+      <description>&lt;img src=&#34;http://localhost:1313/portfolio/collage.jpg&#34;/&gt;</description>
+    </item>
+    <item>
+      <title>Periodical</title>
+      <link>http://localhost:1313/periodical/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/periodical/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
