@@ -1,0 +1,29 @@
+{{ partial "header.html" . }}
+
+{{ partial "menu.html" . }}
+
+<div class="periodical-front-matter">
+    <div class="front-matter-title">
+        <h1>{{ .Site.Title }}</h1>
+    </div>
+
+    <div class="front-matter-description">
+            {{ .Site.Params.periodical_description | markdownify }}
+    </div>
+</div>
+
+{{ .Content }}
+
+<div class="periodical-grid">
+  {{ $pages := .Pages }}
+  {{ range (where $pages "Section" "!=" "") }}
+  <div class="periodical-grid-item periodical-grid-item--{{ with .Params.size }}{{ . }}{{ else }}single{{ end }}">
+    {{ with .Title }}<h2 class="grid-item-title">{{ .| markdownify }}</h2>{{ end }}
+    <div class="grid-item-content">
+        {{ .Content }}
+    </div>
+  </div>
+  {{ end }}
+</ul>
+
+{{ partial "footer.html" . }}

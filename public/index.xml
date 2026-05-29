@@ -6,21 +6,28 @@
     <description>Recent content in I am mother, come rest with me. on mothertheresa666</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Jan 2000 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 May 2026 13:33:03 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>http://localhost:1313/carousel/carousel_00/</link>
-      <pubDate>Sat, 01 Jan 2000 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/carousel/carousel_00/</guid>
-      <description>&lt;img src=&#34;http://localhost:1313/portfolio/collage.jpg&#34;/&gt;</description>
+      <title>Full width example</title>
+      <link>http://localhost:1313/periodical/another/</link>
+      <pubDate>Fri, 29 May 2026 13:33:03 -0400</pubDate>
+      <guid>http://localhost:1313/periodical/another/</guid>
+      <description>&lt;p&gt;l&#xA;Fusce tempor imperdiet rutrum. Suspendisse luctus faucibus feugiat. Proin feugiat molestie odio in placerat. Suspendisse scelerisque varius lacus vel sollicitudin. Nunc eu gravida ante. Nullam volutpat placerat bibendum. Mauris iaculis elit et libero pulvinar vestibulum. Ut eget ligula ut nibh condimentum tempus quis at nisl. Ut et nunc consequat, lobortis justo in, lacinia nulla. Cras molestie magna euismod, pellentesque odio nec, dictum urna. Pellentesque auctor libero quam, in suscipit odio dapibus sit amet. Sed et risus in mauris aliquet suscipit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis sed efficitur dui, et porta nisl. Etiam in rutrum tortor, et ultricies massa. Suspendisse sit amet nunc in lacus molestie faucibus a in nisi.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Periodical</title>
-      <link>http://localhost:1313/periodical/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/periodical/</guid>
-      <description></description>
+      <title>Example</title>
+      <link>http://localhost:1313/periodical/example/</link>
+      <pubDate>Fri, 29 May 2026 13:30:38 -0400</pubDate>
+      <guid>http://localhost:1313/periodical/example/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum mauris ac leo commodo, nec vehicula diam eleifend. Curabitur nec finibus nibh, sed vulputate nibh. Fusce ac ante sed tellus ultrices malesuada ac at odio. Mauris pharetra, magna sit amet tempor ultricies, magna arcu porta velit, a auctor mauris libero vel dolor. Cras in commodo erat, non viverra tellus. Donec bibendum viverra dolor eget faucibus. Donec id nunc elit. Duis a turpis a lacus placerat pharetra id sed risus. Etiam in sapien eu lectus porta mattis quis convallis elit. Donec nec rhoncus elit. Suspendisse potenti. Proin aliquam nisi id sem pretium, id semper massa rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed ipsum id risus rutrum finibus. Pellentesque vitae ligula diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Test</title>
+      <link>http://localhost:1313/periodical/test/</link>
+      <pubDate>Fri, 29 May 2026 13:30:38 -0400</pubDate>
+      <guid>http://localhost:1313/periodical/test/</guid>
+      <description>&lt;p&gt;Wow check out this sexy content&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

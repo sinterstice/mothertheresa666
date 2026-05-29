@@ -1,0 +1,41 @@
+@use 'var' as *;
+
+.content--periodical {
+    .menu {
+        padding: 0;
+
+    }
+}
+
+.periodical-front-matter {
+    text-align: center;
+    color: $c-bone;
+    margin-bottom: $d-xlg;
+
+    h1 {
+        display: inline-block;
+        margin: 0;
+        padding: $d-xlg $d-lg;
+        background: url('/gfx/pink_ribbon.jpg') repeat-x left top;
+        background-size: auto 100%;
+    }
+}
+
+.front-matter-title {
+        &:before, &:after {
+            display: inline-block;
+            content: '';
+            width: 65px;
+            height: 92px;
+            vertical-align: middle;
+            z-index: 1;
+        }
+
+        &:before {
+            background: url('/gfx/cherub_l.gif');
+        }
+
+        &:after {
+            background: url('/gfx/cherub_r.gif');
+        }
+}

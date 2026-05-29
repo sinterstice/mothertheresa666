@@ -28,4 +28,4 @@
     {{ partial "head_custom.html" . }}
   </head>
   <body>
-<div class="content {{ if .IsHome }}content--home{{ end }}">
+<div class="content{{ if .IsHome }} content--home{{ end }} content--{{ .Kind }}{{ if .InSection (.Site.GetPage "/periodical") }} content--periodical{{end}}">

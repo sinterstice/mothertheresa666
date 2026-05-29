@@ -9,6 +9,10 @@ Mothertheresa666 is a multimedia project that blends storytelling, absurdity, co
 
 Based in Rochester, NY, Theresa is a collage artist and social media specialist. She uses her work, both analog and digital, to explore her relationship with religion, spirituality, queerness, and community."""
 
+    periodical_description = """
+Sporadically updated, always enjoyable.
+"""
+
 [menus]
     [[menus.main]]
         name = 'Home'

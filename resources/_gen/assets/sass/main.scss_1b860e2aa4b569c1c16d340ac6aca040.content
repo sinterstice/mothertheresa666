@@ -75,6 +75,38 @@
   max-width: 48rem;
 }
 
+.content--periodical .menu {
+  padding: 0;
+}
+
+.periodical-front-matter {
+  text-align: center;
+  color: #F2F0F2;
+  margin-bottom: 1.1rem;
+}
+.periodical-front-matter h1 {
+  display: inline-block;
+  margin: 0;
+  padding: 1.1rem 0.75rem;
+  background: url("/gfx/pink_ribbon.jpg") repeat-x left top;
+  background-size: auto 100%;
+}
+
+.front-matter-title:before, .front-matter-title:after {
+  display: inline-block;
+  content: "";
+  width: 65px;
+  height: 92px;
+  vertical-align: middle;
+  z-index: 1;
+}
+.front-matter-title:before {
+  background: url("/gfx/cherub_l.gif");
+}
+.front-matter-title:after {
+  background: url("/gfx/cherub_r.gif");
+}
+
 * {
   box-sizing: border-box;
 }
@@ -85,9 +117,9 @@ html {
 
 body {
   height: 100%;
-  background: #591E2E url("/gfx/texture.png") repeat-y;
-  background-size: contain;
+  background: #591E2E url("/gfx/texture_repeating.jpg");
   font-family: "Andada Pro", serif;
+  background-size: 125px;
   font-size: 16px;
   color: #191826;
 }
@@ -134,6 +166,9 @@ p {
   background-size: cover;
   border: 2px solid #fff;
 }
+.menu li:first-child {
+  margin-left: 40px;
+}
 .menu li:first-child:before {
   left: auto;
   right: 100%;
@@ -150,6 +185,9 @@ p {
 }
 .menu li a:visited {
   color: #F2F0F2;
+}
+.menu li a:active {
+  color: #D98484;
 }
 
 main {

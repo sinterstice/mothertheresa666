@@ -1,5 +1,6 @@
-@use 'var.scss' as *;
-@use 'hero.scss';
+@use 'var' as *;
+@use 'hero';
+@use 'periodical';
 
 * { 
     box-sizing: border-box;
@@ -11,9 +12,9 @@ html {
 
 body {
     height: 100%;
-    background: $c-burgundy url('/gfx/texture.png') repeat-y;
-    background-size: contain;
+    background: $c-burgundy url('/gfx/texture_repeating.jpg');
     font-family: "Andada Pro", serif;
+    background-size: 125px;
     font-size: 16px;
     color: $c-coal;
 }
@@ -73,6 +74,10 @@ p {
             border: 2px solid #fff;
         }
 
+        &:first-child {
+            margin-left: $decor-w;
+        }
+
         &:first-child:before {
             left: auto;
             right: 100%;
@@ -91,6 +96,10 @@ p {
 
         &:visited {
             color: $c-bone;
+        }
+
+        &:active {
+            color: $c-blush;
         }
     }
 }
