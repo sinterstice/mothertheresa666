@@ -11,8 +11,7 @@
   "description": "",
   "devDependencies": {
     "@babel/cli": "^7.28.6",
-    "@babel/core": "^7.29.0",
-    "sass": "^1.93.3"
+    "@babel/core": "^7.29.0"
   },
   "dependencies": {
     "@glidejs/glide": "^3.7.1"
