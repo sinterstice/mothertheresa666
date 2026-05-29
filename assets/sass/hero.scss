@@ -1,7 +1,8 @@
 @use 'var.scss' as *;
 
 .homepage-hero { 
-    width: 100vw;
+    min-width: 0;
+    overflow: hidden;
     grid-area: main;
     position: relative;
     background: radial-gradient(ellipse, rgba(0,0,0,0) 40%, rgba(0,0,0,1)) no-repeat top left, url('/hero.jpg') no-repeat top center;

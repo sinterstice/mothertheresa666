@@ -2,14 +2,20 @@
 
 .content--periodical {
     .menu {
-        padding: 0;
+        padding-bottom: 0;
 
     }
 }
 
 .periodical-front-matter {
+    max-width: 100%;
     text-align: center;
     color: $c-bone;
+    margin-bottom: $d-xlg;
+}
+
+.front-matter-title {
+    position: relative;
     margin-bottom: $d-xlg;
 
     h1 {
@@ -18,24 +24,117 @@
         padding: $d-xlg $d-lg;
         background: url('/gfx/pink_ribbon.jpg') repeat-x left top;
         background-size: auto 100%;
-    }
-}
-
-.front-matter-title {
+        animation: angel-bob 5s ease infinite;
+        animation-delay: 1s;
+    
         &:before, &:after {
-            display: inline-block;
+            position: absolute;
+            display: block;
             content: '';
             width: 65px;
             height: 92px;
-            vertical-align: middle;
+            top: 0;
             z-index: 1;
         }
 
         &:before {
+            right: 100%;
             background: url('/gfx/cherub_l.gif');
         }
 
         &:after {
+            left: 100%;
             background: url('/gfx/cherub_r.gif');
         }
+    }
+}
+
+.periodical-grid {
+    display: flex;
+    min-width: 0;
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: $d-lg;
+    padding: $d-lg;
+}
+
+.periodical-grid-item {
+    position: relative;
+    background: rgba($c-petal, 0.6);
+    color: $c-coal;
+    width: 16rem;
+    min-height: 16rem;
+    max-width: 100%;
+    padding: $d-lg;
+
+    &.periodical-grid-item--double {
+        width: 32rem;
+
+        .grid-item-title {
+            font-size: 2em;
+        }
+    }
+
+    &.periodical-grid-item--full {
+        width: 100%;
+
+        .grid-item-title {
+            font-size: 2.8em;
+        }
+    }
+
+    &.periodical-grid-item--image {
+        padding: 0;
+        background: transparent;
+        overflow: hidden;
+        cursor: pointer;
+
+        .grid-item-text-content {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 20%, rgba(0,0,0,.4) 80%, rgba(0,0,0,0));
+            color: $c-bone;
+            padding: $d-xlg $d-lg $d-lg;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        &:active {
+            .grid-item-text-content {
+                opacity: 0;
+                transform: translateY(25%);
+            }
+        }
+    }
+
+    &.periodical-grid-item--embed {
+        background: transparent;
+        padding: 0;
+    }
+}
+
+.grid-item-title {
+    margin: 0 0 $d-sm;
+    z-index: 1;
+}
+
+.grid-item-image {
+}
+
+@keyframes angel-bob {
+    from {
+        transform: translateY(-8%);
+    }
+
+    50% {
+        transform: translateY(8%);
+    }
+
+    to {
+        transform: translateY(-8%);
+    }
 }

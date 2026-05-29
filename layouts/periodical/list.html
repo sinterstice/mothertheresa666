@@ -17,13 +17,22 @@
 <div class="periodical-grid">
   {{ $pages := .Pages }}
   {{ range (where $pages "Section" "!=" "") }}
-  <div class="periodical-grid-item periodical-grid-item--{{ with .Params.size }}{{ . }}{{ else }}single{{ end }}">
-    {{ with .Title }}<h2 class="grid-item-title">{{ .| markdownify }}</h2>{{ end }}
-    <div class="grid-item-content">
-        {{ .Content }}
+  <div class="periodical-grid-item periodical-grid-item--{{ with .Params.size }}{{ . }}{{ else }}single{{ end }} periodical-grid-item--{{ with .Params.type }}{{ . }}{{ else }}text{{ end }}">
+    {{ if eq .Params.type "image" }}
+        <img class="grid-item-image" src="{{ with .Params.attachment }}{{ . }}{{ end }}" alt="{{ .Content }}" />
+    {{ else if eq .Params.type "embed" }}
+        <div class="grid-item-embed-code">{{ .Params.attachment | safeHTML }}</div>
+    {{ end }}
+    <div class="grid-item-text-content">
+        {{ if not (eq .Params.type "embed") }}
+            {{ with .Title }}<h2 class="grid-item-title">{{ .| markdownify }}</h2>{{ end }}
+        {{ end }}
+        <div class="grid-item-content">
+            {{ .Content }}
+        </div>
     </div>
   </div>
   {{ end }}
-</ul>
+</div>
 
 {{ partial "footer.html" . }}
